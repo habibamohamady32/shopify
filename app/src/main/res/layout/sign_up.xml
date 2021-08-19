@@ -80,12 +80,12 @@
                 android:orientation="vertical">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tfFull_Name_"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:hint="Full Name"
-                    >
+                    android:hint="Full Name">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/tfFull_Name"
@@ -97,6 +97,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tfNew_User_"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -114,6 +115,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tfEmail_"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -129,6 +131,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tfPhone_"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -145,6 +148,7 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tfPassword_"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
