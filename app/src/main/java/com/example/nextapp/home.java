@@ -2,6 +2,7 @@ package com.example.nextapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import android.content.Intent;
 
 import android.os.Bundle;
 import android.view.View;
@@ -52,12 +53,18 @@ public class home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
             }
         });
 
         cvFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent (com.example.nextapp.home.this,com.example.nextapp.description.class);
+                intent.putExtra("desc",descFirst.getText().toString());
+                intent.putExtra("image","First");
+
+                startActivity(intent);
 
             }
         });
@@ -65,6 +72,11 @@ public class home extends AppCompatActivity {
         cvSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent (com.example.nextapp.home.this,com.example.nextapp.description.class);
+                intent.putExtra("desc",descSecond.getText().toString());
+                intent.putExtra("image","Second");
+                startActivity(intent);
+
 
             }
         });
@@ -72,6 +84,11 @@ public class home extends AppCompatActivity {
         cvThird.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent (com.example.nextapp.home.this,com.example.nextapp.description.class);
+                intent.putExtra("desc",descThird.getText().toString());
+                intent.putExtra("image","Third");
+                startActivity(intent);
+
 
             }
         });
@@ -79,18 +96,35 @@ public class home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent intent = new Intent (com.example.nextapp.home.this,com.example.nextapp.description.class);
+                intent.putExtra("desc",descFourth.getText().toString());
+                intent.putExtra("image","Fourth");
+                startActivity(intent);
+
+
             }
         });
 
         cvFifth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent (com.example.nextapp.home.this,com.example.nextapp.description.class);
+                intent.putExtra("desc",descFifth.getText().toString());
+                intent.putExtra("image","Fifth");
+                startActivity(intent);
+
 
             }
         });
         cvSixth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Intent intent = new Intent (com.example.nextapp.home.this,com.example.nextapp.description.class);
+                intent.putExtra("desc",descSixth.getText().toString());
+                intent.putExtra("image","Sixth");
+                startActivity(intent);
+
 
             }
         });
