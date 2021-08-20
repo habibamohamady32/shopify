@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".second">
+    tools:context=".login">
 
 
 
@@ -30,7 +30,6 @@
                 android:shadowColor="#CCCCCC"
                 android:shadowRadius="20"
                 android:text="Shopify"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="#ffc60e"
                 android:textSize="42sp"
                 android:textStyle="bold" />
@@ -80,7 +79,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tfUser_"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -96,7 +94,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tfPass_"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -160,7 +157,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:hint="SignUpTv"
                         android:text="Sign Up"
+                        android:onClick="signup"
                         android:textColor="@color/newMood"
                         android:textSize="20sp"
                         android:textStyle="bold" />

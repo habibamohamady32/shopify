@@ -17,7 +17,7 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         com.google.android.material.textfield.TextInputLayout tfUser_ , tfPass_;
-        TextView tvForget_Pass , tvNew_User ;
+        TextView tvForget_Pass  ;
         Button btnSign_In;
 
         super.onCreate(savedInstanceState);
@@ -26,17 +26,10 @@ public class login extends AppCompatActivity {
         tfPass_ = findViewById(R.id.tfPass_);
         tfUser_ =findViewById(R.id.tfUser_);
         tvForget_Pass = findViewById(R.id.tvForget_Pass);
-        tvNew_User = findViewById(R.id.tvNew_User);
         btnSign_In = findViewById(R.id.btnSign_In);
 
 
-        tvNew_User.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =  new Intent(com.example.nextapp.login.this , com.example.nextapp.sign_up.class);
-                startActivity(intent);
-            }
-        });
+
 
         tvForget_Pass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +41,7 @@ public class login extends AppCompatActivity {
         btnSign_In.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (tfPass_.getEditText().getText().toString().isEmpty() ||
+               /* if (tfPass_.getEditText().getText().toString().isEmpty() ||
                         tfUser_.getEditText().getText().toString().isEmpty() ){
                     Toast.makeText(login.this, " Enter All Fields ! ", Toast.LENGTH_SHORT).show();
                 }
@@ -57,10 +50,14 @@ public class login extends AppCompatActivity {
                 Intent intent = new Intent(com.example.nextapp.login.this,com.example.nextapp.home.class);
                 startActivity(intent);
                         }
-
+*/
             }
         });
 
+    }
+
+    public void signup(View view) {
+            startActivity(new Intent(login.this,sign_up.class));
     }
 }
 

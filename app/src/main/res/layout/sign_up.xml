@@ -27,7 +27,6 @@
             android:shadowRadius="20"
             android:transitionName="logo_text"
             android:text="Shopify"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="#ffc60e"
             android:textSize="42sp"
             android:textStyle="bold" />
@@ -79,26 +78,9 @@
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tfFull_Name_"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:hint="Full Name">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/tfFull_Name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    </com.google.android.material.textfield.TextInputEditText>
-                </com.google.android.material.textfield.TextInputLayout>
-
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tfNew_User_"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -116,7 +98,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tfEmail_"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -132,7 +113,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tfPhone_"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -149,7 +129,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tfPassword_"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -173,6 +152,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/rounded_button"
                     android:text="Sign Up"
+                    android:onClick="signup"
                     android:transitionName="button_tran"
                     app:backgroundTint="@color/newMood" />
 
