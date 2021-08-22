@@ -17,7 +17,7 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         com.google.android.material.textfield.TextInputLayout tfUser_ , tfPass_;
-        TextView tvForget_Pass  ;
+        TextView tvForget_Pass ,tvNew_User ;
         Button btnSign_In;
 
         super.onCreate(savedInstanceState);
@@ -27,6 +27,7 @@ public class login extends AppCompatActivity {
         tfUser_ =findViewById(R.id.tfUser_);
         tvForget_Pass = findViewById(R.id.tvForget_Pass);
         btnSign_In = findViewById(R.id.btnSign_In);
+        tvNew_User = findViewById(R.id.tvNew_User);
 
 
 
@@ -41,16 +42,17 @@ public class login extends AppCompatActivity {
         btnSign_In.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* if (tfPass_.getEditText().getText().toString().isEmpty() ||
+                if (tfPass_.getEditText().getText().toString().isEmpty() ||
                         tfUser_.getEditText().getText().toString().isEmpty() ){
                     Toast.makeText(login.this, " Enter All Fields ! ", Toast.LENGTH_SHORT).show();
                 }
                 else{
 
+
                 Intent intent = new Intent(com.example.nextapp.login.this,com.example.nextapp.home.class);
                 startActivity(intent);
                         }
-*/
+
             }
         });
 
