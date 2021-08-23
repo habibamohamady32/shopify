@@ -131,6 +131,15 @@
             android:layout_height="40sp"
             android:layout_gravity="center_horizontal|center_vertical"
             app:srcCompat="@drawable/shopping_cart" />
+
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <Button
+        android:id="@+id/tst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="682dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

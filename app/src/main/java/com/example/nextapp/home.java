@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ public class home extends AppCompatActivity {
 
     EditText etSearch;
     BottomNavigationView BottomAppBar;
+    Button tst;
 
 
 
@@ -48,6 +50,7 @@ public class home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         etSearch = findViewById(R.id.etSearch);
         BottomAppBar = findViewById(R.id.bottomAppBar);
+        tst=findViewById(R.id.tst);
        /* rv_popular= findViewById(R.id.rv_popular);
         rv_popular.setHasFixedSize(true);
         manager2 = new LinearLayoutManager(this , LinearLayoutManager.VERTICAL , false);
@@ -105,8 +108,13 @@ public class home extends AppCompatActivity {
             }
         });
 
-
-
+      tst.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent intent=new Intent(home.this,com.example.nextapp.cart.class);
+              startActivity(intent);
+          }
+      });
 
     }
 }

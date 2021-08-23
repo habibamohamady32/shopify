@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NextApp">
         <activity
+            android:name=".cart"
+            android:exported="true" />
+        <activity
             android:name=".B_Adapter"
             android:exported="true" />
         <activity android:name=".description" />

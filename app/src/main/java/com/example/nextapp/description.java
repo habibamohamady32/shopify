@@ -10,11 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class description extends AppCompatActivity {
     ImageView iv_;
     TextView tv_desc , tv_long_desc;
     Button btn_toCart;
     String image,desc;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("Cart");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +28,7 @@ public class description extends AppCompatActivity {
         iv_ = findViewById(R.id.iv_);
         tv_desc = findViewById(R.id.tv_desc);
         tv_long_desc = findViewById(R.id.tv_long_desc);
-        btn_toCart = findViewById(R.id.btBuy);
+        btn_toCart = findViewById(R.id.btAddToCart);
 
         desc=getIntent().getStringExtra("desc").toString();
         tv_desc.setText(desc);
@@ -40,7 +45,14 @@ public class description extends AppCompatActivity {
         {
             iv_.setImageResource(R.drawable.h6);
         }
+      btn_toCart.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              myRef.setValue("Name",desc);
+              myRef.setValue("imges",image);
 
+          }
+      });
 
     }
 }
