@@ -46,23 +46,23 @@ import java.util.ArrayList;
         {
         holder.ivPref.setImageResource(R.drawable.h1);
         }
-        else if(itemslist.get(position).getIvPref().equals("h2")) {
-            holder.ivPref.setImageResource(R.drawable.h2);
-        }
-
-        else if(itemslist.get(position).getIvPref().equals("h7"))
-            {
-            holder.ivPref.setImageResource(R.drawable.h7);
-        }
-        else {
+        else if(itemslist.get(position).getIvPref().equals("h6")) {
             holder.ivPref.setImageResource(R.drawable.h6);
         }
+
+        else if(itemslist.get(position).getIvPref().equals("h8"))
+            {
+            holder.ivPref.setImageResource(R.drawable.h8);
+        }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(holder.itemView.getContext(),com.example.nextapp.description.class);
                 intent.putExtra("desc",itemslist.get(position).getTvdesc());
                 intent.putExtra("imageDet",itemslist.get(position).getIvPref());
+                intent.putExtra("price",itemslist.get(position).getPrice());
+
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 holder.itemView.getContext().startActivity(intent);
             }
@@ -77,10 +77,12 @@ import java.util.ArrayList;
     public class itemViewHolder extends RecyclerView.ViewHolder{
         ImageView ivPref;
         TextView tvdesc;
+
         public itemViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             ivPref = itemView.findViewById(R.id.ivPref);
             tvdesc =itemView.findViewById(R.id.tvdesc);
+
 
         }
     }

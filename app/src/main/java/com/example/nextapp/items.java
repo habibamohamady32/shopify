@@ -9,6 +9,7 @@ import java.io.Serializable;
 public class items implements Serializable {
    private String tvdesc;
    private String ivPref;
+   private Float price;
 
     public items() {
     }
@@ -16,6 +17,20 @@ public class items implements Serializable {
     public items(String tvdesc, String ivPref) {
         this.tvdesc = tvdesc;
         this.ivPref = ivPref;
+    }
+
+    public items(String tvdesc, String ivPref , float price) {
+        this.tvdesc = tvdesc;
+        this.ivPref = ivPref;
+        this.price= price;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
     }
 
     public String getTvdesc() {

@@ -32,15 +32,15 @@ public class home extends AppCompatActivity {
     ImageView ivPref;
     RecyclerView rv_bests , rv_popular;
     RecyclerView.LayoutManager manager , manager2;
-    RecyclerView.Adapter myAdapter , myAdabter2;
-    ArrayList<items> myitems;
+    RecyclerView.Adapter myAdapter , myAdapter2;
+    ArrayList<items> myitems ;
     Context context;
-   // ArrayList<items2> myitems2;
+   ArrayList<items> myitems2;
     DatabaseReference database , database2;
 
     EditText etSearch;
     BottomNavigationView BottomAppBar;
-    Button tst;
+
 
 
 
@@ -50,48 +50,54 @@ public class home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         etSearch = findViewById(R.id.etSearch);
         BottomAppBar = findViewById(R.id.bottomAppBar);
-        tst=findViewById(R.id.tst);
-       /* rv_popular= findViewById(R.id.rv_popular);
+        //tst=findViewById(R.id.tst);
+
+        rv_popular= findViewById(R.id.rv_popular);
         rv_popular.setHasFixedSize(true);
-        manager2 = new LinearLayoutManager(this , LinearLayoutManager.VERTICAL , false);
+        manager2 = new LinearLayoutManager(this);
         rv_popular.setLayoutManager(manager2);
-        myAdabter2 = new popular_Adapter(this , myitems2 );
-        rv_popular.setAdapter(myAdabter2);
+        myitems2 = new ArrayList<items>();
+        myAdapter2 = new popular_Adapter(this , myitems2 );
+        rv_popular.setAdapter(myAdapter2);
         database2 = FirebaseDatabase.getInstance().getReference("popular");
         database2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 for ( DataSnapshot dataSnapshot : snapshot.getChildren()){
                     items item = dataSnapshot.getValue(items.class);
-                    myitems.add(item);}
-                myAdapter.notifyDataSetChanged();
+                    myitems2.add(item);}
+                myAdapter2.notifyDataSetChanged();
+
             }
 
             @Override
             public void onCancelled(@NonNull @NotNull DatabaseError error) {
 
-
             }
         });
+     /*   database2.addValueEventListener(new ValueEventListener() {
+            @Override
 
-*/
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                for ( DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    items item = dataSnapshot.getValue(items.class);
+                    myitems2.add(item);}
+                myAdapter2.notifyDataSetChanged();
+            }
 
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+            }
+        });*/
 
         rv_bests = findViewById(R.id.rv_bests);
         rv_bests.setHasFixedSize(true);
-
         manager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-
         rv_bests.setLayoutManager(manager);
-
         myitems = new ArrayList<items>();
-        //myitems.add(new items("First","h1"));
-      //  myitems.add(new items("Second", "h2"));
         myAdapter = new bs_Adapter(this, myitems);
         rv_bests.setAdapter(myAdapter);
-
         database = FirebaseDatabase.getInstance().getReference("bestSelling");
-
       database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
@@ -108,10 +114,11 @@ public class home extends AppCompatActivity {
             }
         });
 
-      tst.setOnClickListener(new View.OnClickListener() {
+      BottomAppBar.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
               Intent intent=new Intent(home.this,com.example.nextapp.cart.class);
+
               startActivity(intent);
           }
       });

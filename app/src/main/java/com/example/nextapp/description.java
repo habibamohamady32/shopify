@@ -18,8 +18,9 @@ public class description extends AppCompatActivity {
     TextView tv_desc , tv_long_desc;
     Button btn_toCart;
     String image,desc;
+    float price;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Cart");
+    DatabaseReference myRef = database.getReference().child("Cart");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class description extends AppCompatActivity {
 
         desc=getIntent().getStringExtra("desc").toString();
         tv_desc.setText(desc);
+
         image=getIntent().getStringExtra("imageDet").toString();
         if(image.equals("h1"))
         {
@@ -41,15 +43,49 @@ public class description extends AppCompatActivity {
         {
             iv_.setImageResource(R.drawable.h2);
         }
+        else if(image.equals("h3"))
+        {
+            iv_.setImageResource(R.drawable.h3);
+        }
+        else if(image.equals("h4"))
+        {
+            iv_.setImageResource(R.drawable.h4);
+        }
+        else if(image.equals("h5"))
+        {
+            iv_.setImageResource(R.drawable.h5);
+        }
         else if(image.equals("h6"))
         {
             iv_.setImageResource(R.drawable.h6);
         }
+        else if(image.equals("h7"))
+        {
+            iv_.setImageResource(R.drawable.h7);
+        }
+        else if(image.equals("h8"))
+        {
+            iv_.setImageResource(R.drawable.h8);
+        }
+        else if(image.equals("h9"))
+        {
+            iv_.setImageResource(R.drawable.h9);
+        }else if(image.equals("h11"))
+        {
+            iv_.setImageResource(R.drawable.h11);
+        }
+        else if(image.equals("h12"))
+        {
+            iv_.setImageResource(R.drawable.h12);
+        }
+
+
       btn_toCart.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              myRef.setValue("Name",desc);
-              myRef.setValue("imges",image);
+              items item = new items(desc,image);
+              myRef.child(image).push().setValue(item);
+
 
           }
       });

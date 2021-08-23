@@ -20,30 +20,54 @@ import java.util.ArrayList;
 
 public class cart extends AppCompatActivity {
     RecyclerView rvCart ;
-    RecyclerView.LayoutManager manager ;
-    RecyclerView.Adapter myAdapter ;
+    RecyclerView.LayoutManager manage ;
+    RecyclerView.Adapter myAdapter3 ;
     ArrayList<items> itemsArrayList;
     Context context;
-    DatabaseReference database;
+    DatabaseReference database3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-        rvCart = findViewById(R.id.rvCart);
+       /* rvCart = findViewById(R.id.rvCart);
         rvCart.setHasFixedSize(true);
-        manager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        rvCart.setLayoutManager(manager);
-        itemsArrayList=new ArrayList<items>();
-        myAdapter = new bs_Adapter(this, itemsArrayList);
-        rvCart.setAdapter(myAdapter);
-        database = FirebaseDatabase.getInstance().getReference("Cart");
-        database.addValueEventListener(new ValueEventListener() {
+        manage = new LinearLayoutManager(this);
+        rvCart.setLayoutManager(manage);
+        ArrayList<items> itemsArrayList= new ArrayList<items>();
+        myAdapter3 = new cart_Adapter( this,itemsArrayList);
+        rvCart.setAdapter(myAdapter3);
+        database3 = FirebaseDatabase.getInstance().getReference("Cart");
+        database3.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 for ( DataSnapshot dataSnapshot : snapshot.getChildren()){
                     items item = dataSnapshot.getValue(items.class);
                     itemsArrayList.add(item);}
-                myAdapter.notifyDataSetChanged();
+                myAdapter3.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+       }); */
+
+       rvCart = findViewById(R.id.rvCart);
+        rvCart.setHasFixedSize(true);
+        manage = new LinearLayoutManager(this);
+        rvCart.setLayoutManager(manage);
+        itemsArrayList = new ArrayList<items>();
+        myAdapter3 = new cart_Adapter(this , itemsArrayList );
+        rvCart.setAdapter(myAdapter3);
+        database3 = FirebaseDatabase.getInstance().getReference("Cart");
+        database3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                for ( DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    items item = dataSnapshot.getValue(items.class);
+                    itemsArrayList.add(item);}
+                myAdapter3.notifyDataSetChanged();
 
             }
 
@@ -52,5 +76,4 @@ public class cart extends AppCompatActivity {
 
             }
         });
-    }
-}
+}}

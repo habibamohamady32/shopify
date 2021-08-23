@@ -11,11 +11,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="cart"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCart"
             android:layout_width="match_parent"
-            android:layout_height="256dp"
-            tools:listitem="@layout/cart_list"/>
-
+            android:layout_height="match_parent" />
     </LinearLayout>
 </RelativeLayout>
