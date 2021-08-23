@@ -2,12 +2,17 @@ package com.example.nextapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -21,11 +26,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class home extends AppCompatActivity {
-
+    CardView cardView;
+    TextView tvdesc;
+    ImageView ivPref;
     RecyclerView rv_bests , rv_popular;
     RecyclerView.LayoutManager manager , manager2;
     RecyclerView.Adapter myAdapter , myAdabter2;
     ArrayList<items> myitems;
+    Context context;
    // ArrayList<items2> myitems2;
     DatabaseReference database , database2;
 
@@ -38,9 +46,6 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-
-
         etSearch = findViewById(R.id.etSearch);
         BottomAppBar = findViewById(R.id.bottomAppBar);
        /* rv_popular= findViewById(R.id.rv_popular);
@@ -102,20 +107,6 @@ public class home extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-        BottomAppBar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-            }
-        });
 
     }
 }

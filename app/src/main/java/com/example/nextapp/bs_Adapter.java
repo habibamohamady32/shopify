@@ -1,6 +1,9 @@
 package com.example.nextapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.ColorSpace;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +20,13 @@ import java.util.ArrayList;
  public class bs_Adapter extends RecyclerView.Adapter<bs_Adapter.itemViewHolder> {
 
     private ArrayList<items> itemslist;
+    Context context;
 
-    public bs_Adapter(Context context, ArrayList<items> itemslist) {
+
+     public bs_Adapter(Context context, ArrayList<items> itemslist) {
         this.itemslist = itemslist;
+         this.context=context;
+
     }
 
 
@@ -29,6 +36,7 @@ import java.util.ArrayList;
         return new itemViewHolder(v);
     }
 
+    @SuppressLint("RecyclerView")
     @Override
     public void onBindViewHolder(@NonNull  bs_Adapter.itemViewHolder holder, int position) {
         holder.itemView.setTag(itemslist.get(position));
@@ -38,14 +46,27 @@ import java.util.ArrayList;
         {
         holder.ivPref.setImageResource(R.drawable.h1);
         }
-        else if(itemslist.get(position).getIvPref().equals("h8"))
+        else if(itemslist.get(position).getIvPref().equals("h2")) {
+            holder.ivPref.setImageResource(R.drawable.h2);
+        }
+
+        else if(itemslist.get(position).getIvPref().equals("h7"))
             {
-            holder.ivPref.setImageResource(R.drawable.h8);
+            holder.ivPref.setImageResource(R.drawable.h7);
         }
         else {
             holder.ivPref.setImageResource(R.drawable.h6);
         }
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(holder.itemView.getContext(),com.example.nextapp.description.class);
+                intent.putExtra("desc",itemslist.get(position).getTvdesc());
+                intent.putExtra("imageDet",itemslist.get(position).getIvPref());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -61,12 +82,6 @@ import java.util.ArrayList;
             ivPref = itemView.findViewById(R.id.ivPref);
             tvdesc =itemView.findViewById(R.id.tvdesc);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-            });
         }
     }
 }

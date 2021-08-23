@@ -2,15 +2,19 @@ package com.example.nextapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class description extends AppCompatActivity {
     ImageView iv_;
     TextView tv_desc , tv_long_desc;
     Button btn_toCart;
+    String image,desc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,34 +23,23 @@ public class description extends AppCompatActivity {
         iv_ = findViewById(R.id.iv_);
         tv_desc = findViewById(R.id.tv_desc);
         tv_long_desc = findViewById(R.id.tv_long_desc);
-        btn_toCart = findViewById(R.id.btn_toCart);
+        btn_toCart = findViewById(R.id.btBuy);
 
-        String desc = getIntent().getStringExtra("desc");
-        String image = getIntent().getStringExtra("image");
-
+        desc=getIntent().getStringExtra("desc").toString();
         tv_desc.setText(desc);
-
-        if (image.equals("First")){
+        image=getIntent().getStringExtra("imageDet").toString();
+        if(image.equals("h1"))
+        {
             iv_.setImageResource(R.drawable.h1);
-            tv_long_desc.setText("first");
         }
-        else if(image.equals("Second")){
+        else if(image.equals("h2"))
+        {
             iv_.setImageResource(R.drawable.h2);
-            tv_long_desc.setText("Second");
         }
-        else if(image.equals("Third")){
-            iv_.setImageResource(R.drawable.h3);
-            tv_long_desc.setText("Third");}
-        else if(image.equals("Fourth")){
-            iv_.setImageResource(R.drawable.h4);
-            tv_long_desc.setText("Fourth");}
-        else if(image.equals("Fifth")){
-            iv_.setImageResource(R.drawable.h5);
-            tv_long_desc.setText("Fifth");}
-        else if(image.equals("Sixth")){
+        else if(image.equals("h6"))
+        {
             iv_.setImageResource(R.drawable.h6);
-            tv_long_desc.setText("Sixth");}
-
+        }
 
 
     }

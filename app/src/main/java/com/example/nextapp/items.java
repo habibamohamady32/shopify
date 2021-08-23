@@ -4,7 +4,9 @@ package com.example.nextapp;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class items {
+import java.io.Serializable;
+
+public class items implements Serializable {
    private String tvdesc;
    private String ivPref;
 
