@@ -122,6 +122,7 @@ public class home extends AppCompatActivity {
               Intent intent=new Intent(home.this,com.example.nextapp.login.class);
 
               startActivity(intent);
+              finish();
           }
       });
 
