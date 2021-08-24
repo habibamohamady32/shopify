@@ -2,21 +2,29 @@ package com.example.nextapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class total extends AppCompatActivity {
     TextView tvCost;
     ImageView ivCost;
     String Total,img;
+    Button checkout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_total);
         tvCost=findViewById(R.id.tvCost);
         ivCost=findViewById(R.id.ivCost);
+        checkout= findViewById(R.id.checkout);
         img=getIntent().getStringExtra("image").toString();
         Total=getIntent().getStringExtra("totalCost").toString();
         tvCost.setText(Total);
@@ -74,6 +82,16 @@ public class total extends AppCompatActivity {
             ivCost.setImageResource(R.drawable.h12);
 
         }
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(total.this, "Your order will be recevived soon! ", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(total.this,home.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
 
 

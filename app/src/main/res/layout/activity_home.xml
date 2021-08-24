@@ -130,7 +130,8 @@
             android:layout_width="50sp"
             android:layout_height="40sp"
             android:layout_gravity="center_horizontal|center_vertical"
-            app:srcCompat="@drawable/shopping_cart" />
+            android:rotationY="180"
+            app:srcCompat="@drawable/exit" />
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 

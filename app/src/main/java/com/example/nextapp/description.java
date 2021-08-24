@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ public class description extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_description);
         iv_ = findViewById(R.id.iv_);
         tv_desc = findViewById(R.id.tv_desc);
@@ -124,6 +126,7 @@ public class description extends AppCompatActivity {
                 intent.putExtra("image",image);
                 intent.putExtra("totalCost",howMeny);
                 startActivity(intent);
+                finish();
             }
         });
     }

@@ -23,14 +23,14 @@ public class sign_up extends AppCompatActivity {
     com.google.android.material.textfield.TextInputLayout tfNew_User_ , tfEmail_ , tfPhone_ ,tfPassword_;
     Button btnSign_up;
    TextView tvOld_user;
-   private FirebaseAuth auth;
+   DatabaseReference referance = FirebaseDatabase.getInstance().getReference("users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.sign_up);
-        auth=FirebaseAuth.getInstance();
+        //auth=FirebaseAuth.getInstance();
         tfEmail_ = findViewById(R.id.tfEmail_);
         tfNew_User_ = findViewById(R.id.tfNew_User_);
         tfPassword_= findViewById(R.id.tfPassword_);
@@ -46,14 +46,41 @@ public class sign_up extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+         btnSign_up.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 referance = FirebaseDatabase.getInstance().getReference().child("users");
+                 String username=tfNew_User_.getEditText().getText().toString();
+                 String password=tfPassword_.getEditText().getText().toString();
+                 String email=tfEmail_.getEditText().getText().toString();
+                 String phoneNo=tfPhone_.getEditText().getText().toString();
+
+                 if (username.isEmpty()||password.isEmpty()||email.isEmpty()||phoneNo.isEmpty()){
+                     Toast.makeText(sign_up.this, "Enter All Fields", Toast.LENGTH_SHORT).show();
+                 }
+                 else
+                 { User user = new User(username,phoneNo,email,password);
+                     referance.child(username).setValue(user);
+                     Toast.makeText(sign_up.this, "Regiestered Successfully!", Toast.LENGTH_SHORT).show();
+                     startActivity(new Intent(sign_up.this,login.class));
+                     finish();}
+             }
+         });
 
     }
-    public void signup(View view) {
-        String username=tfNew_User_.getEditText().toString();
-        String password=tfPassword_.getEditText().toString();
-        String email=tfEmail_.getEditText().toString();
-        String phonenum=tfPhone_.getEditText().toString();
-        if(TextUtils.isEmpty(username))
+
+   // public void signup(View view) {
+
+
+
+
+
+
+
+
+
+
+       /* if(TextUtils.isEmpty(username))
         {
             Toast.makeText(this,"Enter Name!",Toast.LENGTH_SHORT).show();
             return;
@@ -89,18 +116,18 @@ public class sign_up extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
-                    Toast.makeText(sign_up.this,"Regiestered Successfully!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(sign_up.this,"",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(sign_up.this,MainActivity.class));
 
                 }
                 else
                 {
-                    Toast.makeText(sign_up.this,"Registration Failed"+task.getException(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(sign_up.this,""+task.getException(),Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
-        //startActivity(new Intent(sign_up.this,MainActivity.class));
+
 
     }
-}
+

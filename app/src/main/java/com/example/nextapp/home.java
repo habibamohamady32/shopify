@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -47,6 +48,7 @@ public class home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
         etSearch = findViewById(R.id.etSearch);
         BottomAppBar = findViewById(R.id.bottomAppBar);
@@ -117,7 +119,7 @@ public class home extends AppCompatActivity {
       BottomAppBar.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              Intent intent=new Intent(home.this,com.example.nextapp.cart.class);
+              Intent intent=new Intent(home.this,com.example.nextapp.login.class);
 
               startActivity(intent);
           }

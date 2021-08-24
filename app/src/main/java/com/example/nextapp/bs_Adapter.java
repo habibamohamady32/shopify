@@ -45,17 +45,17 @@ import java.util.ArrayList;
         if(itemslist.get(position).getIvPref().equals("h1"))
         {
         holder.ivPref.setImageResource(R.drawable.h1);
-        holder.tvPrice.setText("60");
+       // holder.tvPrice.setText("60");
         }
         else if(itemslist.get(position).getIvPref().equals("h6")) {
             holder.ivPref.setImageResource(R.drawable.h6);
-            holder.tvPrice.setText("50");
+         //   holder.tvPrice.setText("50");
         }
 
         else if(itemslist.get(position).getIvPref().equals("h8"))
             {
             holder.ivPref.setImageResource(R.drawable.h8);
-                holder.tvPrice.setText("85400");
+           //     holder.tvPrice.setText("85400");
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +64,7 @@ import java.util.ArrayList;
                 Intent intent=new Intent(holder.itemView.getContext(),com.example.nextapp.description.class);
                 intent.putExtra("desc",itemslist.get(position).getTvdesc());
                 intent.putExtra("imageDet",itemslist.get(position).getIvPref());
-                intent.putExtra("price",itemslist.get(position).getPrice());
+             //   intent.putExtra("price",itemslist.get(position).getPrice());
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 holder.itemView.getContext().startActivity(intent);
@@ -85,7 +85,7 @@ import java.util.ArrayList;
             super(itemView);
             ivPref = itemView.findViewById(R.id.ivPref);
             tvdesc =itemView.findViewById(R.id.tvdesc);
-            tvPrice=itemView.findViewById(R.id.tvPrice);
+           // tvPrice=itemView.findViewById(R.id.tvPrice);
 
 
         }

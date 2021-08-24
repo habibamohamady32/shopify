@@ -14,10 +14,10 @@ public class items implements Serializable {
     public items() {
     }
 
-    public items(String tvdesc, String ivPref) {
+   /* public items(String tvdesc, String ivPref) {
         this.tvdesc = tvdesc;
         this.ivPref = ivPref;
-    }
+   */
 
     public items(String tvdesc, String ivPref , float price) {
         this.tvdesc = tvdesc;
