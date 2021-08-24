@@ -22,10 +22,28 @@
             android:id="@+id/tv_popular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:text="TextView"
             android:textSize="20sp"
             android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tvPricePop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="$" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

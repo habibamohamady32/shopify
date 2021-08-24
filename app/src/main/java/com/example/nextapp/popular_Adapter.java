@@ -44,23 +44,28 @@ public class popular_Adapter extends RecyclerView.Adapter<popular_Adapter.itemVi
        if(itemslist.get(position).getIvPref().equals("h2"))
        {
        holder.ivPref.setImageResource(R.drawable.h2);
+           holder.tvPricePop.setText("75");
        }
        else if(itemslist.get(position).getIvPref().equals("h7")) {
            holder.ivPref.setImageResource(R.drawable.h7);
+           holder.tvPricePop.setText("30000");
        }
 
        else if(itemslist.get(position).getIvPref().equals("h10"))
            {
            holder.ivPref.setImageResource(R.drawable.h10);
+               holder.tvPricePop.setText("6000");
        }
 
        else if(itemslist.get(position).getIvPref().equals("h11"))
        {
            holder.ivPref.setImageResource(R.drawable.h11);
+           holder.tvPricePop.setText("4500");
        }
        else if(itemslist.get(position).getIvPref().equals("h12"))
        {
            holder.ivPref.setImageResource(R.drawable.h12);
+           holder.tvPricePop.setText("26000");
        }
 
        holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -84,12 +89,13 @@ public class popular_Adapter extends RecyclerView.Adapter<popular_Adapter.itemVi
 
    public class itemViewHolder2 extends RecyclerView.ViewHolder{
        ImageView ivPref;
-       TextView tvdesc;
+       TextView tvdesc,tvPricePop;
 
        public itemViewHolder2(@NonNull @NotNull View itemView) {
            super(itemView);
            ivPref = itemView.findViewById(R.id.iv_popular);
            tvdesc =itemView.findViewById(R.id.tv_popular);
+           tvPricePop=itemView.findViewById(R.id.tvPricePop);
 
        }
    }
